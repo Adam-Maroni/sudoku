@@ -1,0 +1,7 @@
+START
+    IF (argc != 9) OR argv (contains any characte other than '1'-'9' or '.')
+        ERROR
+    ELSE
+        input validated
+    ENDIF
+END

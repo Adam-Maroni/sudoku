@@ -1,0 +1,13 @@
+    This algorithm receive an input of multiple strings. Fill the blank with 0 and return the corresponding grid.
+
+
+START
+    Receive arguments when used as input when call through the pogram
+    IF (VALID_INPUT)
+        Fill empty space with 0
+        Put characters to grid
+        return grid
+    ELSE
+        ERROR
+    ENDIF
+END

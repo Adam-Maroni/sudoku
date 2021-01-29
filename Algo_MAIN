@@ -1,0 +1,22 @@
+START
+    IF (VALIDATE_INPUT)
+        PARSING
+    ELSE 
+        ERROR
+    ENDIF
+    Find the first cell with 0 in it
+    Init this cell to 1
+    RECURCIVE
+        WHILE (value of this cell <= 9)
+            IF (cell is validated)
+                Move to the next cell with 0 in it
+            ENDIF
+            IF (this cell is out of grid)
+                SUCCESS - Completion is over - return 1
+            ENDIF
+            IF (the return value of backtracking(grid, cell)) == 1
+                return (1)
+            ENDIF
+        ENDWHILE
+    ENDRECURCIVE
+END
