@@ -6,16 +6,24 @@ int main(int argc, char **argv)
     t_pt first_cell;
 
     if (validate_input(argc, argv))
-        grid = parsing(argv);
+    {
+        int i; 
+
+        i = -1;
+        grid = (char**)malloc(sizeof(char*) * 9);
+        while (++i < 9)
+            grid[i] = (char*)malloc(9 * sizeof(char));
+        parsing(argv, grid);
+    }
     else
         error("Invalid_input");
-    display_grid(grid);
+    display(grid);
     first_cell = find_next_cell(grid);
     if (isInBound(first_cell) == 0)
         error("No cell to start by");
     if (backtracking(grid, first_cell) == 1)
     {
-        display_grid(grid);
+        display(grid);
         success("Found solution");
     }
     else

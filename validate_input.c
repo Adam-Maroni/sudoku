@@ -5,12 +5,16 @@ int validate_input_characters(char **argv)
     int i;
     char character;
     
-    i = -1;
-    while (++i < 10)
+    i = 1;
+    while (i < 10)
     {
         while((character = *(argv[i])))
+        {
             if (!(character >= '1' && character <= '9')  && (character != '.'))
                 return (0);
+            (argv[i])++;
+        }
+        i++;
     }
     return (1);
 }
@@ -19,7 +23,7 @@ int validate_input_length(char **argv)
 {
     int i;
 
-    i = -1;
+    i = 0;
     while (++i < 10)
         if (strlen(argv[i]) != 9)
             return (0);

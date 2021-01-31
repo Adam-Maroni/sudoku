@@ -1,6 +1,6 @@
 #include "sudoku.h"
 
-void display_grid(char grid[9][9])
+void display(char **grid)
 {
    int x; 
    int y; 

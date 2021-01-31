@@ -1,8 +1,7 @@
 #include "sudoku.h"
 
-char **parsing(char **argv)
+void parsing(char **argv, char **grid)
 {
-    char grid[9][9];
     int x;
     int y;
 
@@ -18,5 +17,4 @@ char **parsing(char **argv)
                 grid[x][y] = argv[x][y];
         }
     }
-    return (grid);
 }

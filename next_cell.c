@@ -1,6 +1,6 @@
 #include "sudoku.h"
 
-t_pt    find_next_cell(char grid[9][9])
+t_pt    find_next_cell(char **grid)
 {
     t_pt next_cell;
     int x;
