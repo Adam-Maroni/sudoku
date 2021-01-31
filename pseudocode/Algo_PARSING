@@ -3,11 +3,7 @@
 
 START
     Receive arguments when used as input when call through the pogram
-    IF (VALID_INPUT)
-        Fill empty space with 0
-        Put characters to grid
-        return grid
-    ELSE
-        ERROR
-    ENDIF
+    Fill empty space with 0
+    Put characters to grid
+    return grid
 END

@@ -2,21 +2,16 @@ START
     IF (VALIDATE_INPUT)
         PARSING
     ELSE 
-        ERROR
+        ERROR (Invalid input)
     ENDIF
-    Find the first cell with 0 in it
-    Init this cell to 1
-    RECURCIVE
-        WHILE (value of this cell <= 9)
-            IF (cell is validated)
-                Move to the next cell with 0 in it
-            ENDIF
-            IF (this cell is out of grid)
-                SUCCESS - Completion is over - return 1
-            ENDIF
-            IF (the return value of backtracking(grid, cell)) == 1
-                return (1)
-            ENDIF
-        ENDWHILE
-    ENDRECURCIVE
+    PRINT(grid)
+    IF (first cell equal to '0' is not in bound)
+        ERROR (No cell to start by)
+    ENDIF
+    IF ( BACKTRACKING(first_cell) equal 1)
+        SUCCESS - print result
+        PRINT(grid)
+    ELSE
+        FAIL - no solution found
+    ENDIF
 END

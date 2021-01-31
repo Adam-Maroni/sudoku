@@ -1,5 +1,5 @@
 START
-    IF (argc != 9) OR argv (contains any characte other than '1'-'9' or '.')
+    IF (argc != 10) OR (argv contains any characte other than '1'-'9' or '.') OR ( length argv != 9)
         ERROR
     ELSE
         input validated

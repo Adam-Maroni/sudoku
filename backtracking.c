@@ -1,27 +1,26 @@
 #include "sudoku.h"
 
-int backtracking(char **grid, t_pt point)
+int backtracking(char **grid, t_pt cell)
 {
     char value;
-    t_pt next;
+    t_pt next_cell;
     int ret;
-    t_pt cursor;
 
     value = '1';
     while (value <= '9')
     {
-        grid[cursor.x][cursor.y] = value;
-        if(all_ok(grid))
+        grid[cell.x][cell.y] = value;
+        if(all_ok(grid, cell))
         {
-            next = find_next_cell(grid);
-            if (next.y == 9 && next.x == 9)
+            next_cell = find_next_cell(grid);
+            if (!isInBound(next_cell))
                 return (1);
-            ret = backtracking(grid, next);
+            ret = backtracking(grid, next_cell);
             if (ret == 1)
                 return (1);
         }
         value++;
     }
-    grid[pos.x][pos.y] = '0';
-    retur(0);
+    grid[cell.x][cell.y] = '0';
+    return (0);
 }
