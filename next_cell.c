@@ -7,9 +7,9 @@ t_pt    find_next_cell(char **grid, t_pt start)
     int y;
 
     x = start.x;
+    y = start.y;
     while(x < 9)
     {
-        y = start.y;
         while (y < 9)
         {
             if (grid[x][y] == '0')
@@ -20,6 +20,7 @@ t_pt    find_next_cell(char **grid, t_pt start)
             }
             y++;
         }
+        y = 0;
         x++;
     }
     next_cell.x = x;
