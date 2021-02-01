@@ -54,3 +54,20 @@ int all_ok(char **grid, t_pt cell)
 {
     return (col_ok(grid,cell) && line_ok(grid,cell) && cube_ok(grid,cell));
 }
+
+int grid_ok(char **grid)
+{
+    t_pt cursor;
+
+    cursor.x = cursor.y = -1;
+    while (++cursor.x < 9)
+    {
+        while (++cursor.y < 9)
+        {
+            if (!all_ok(grid, cursor))
+                return (0);
+        }
+        cursor.y = -1;
+    }
+    return (1);
+}

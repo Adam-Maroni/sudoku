@@ -1,20 +1,38 @@
 #include "sudoku.h"
 
-void free_svargv(char **sv_argv)
+void free_svargv(char **pt, int argc)
 {
     int i;
 
-    i = 0;
-    if (sv_argv[i])
+    i = -1;
+    while (++i < argc)
     {
-        free(sv_argv[i]);
-        sv_argv[i] = NULL;
+        free(pt[i]);
+        pt[i] = NULL;
         i++;
     }
-    if (sv_argv)
+    if (pt)
     {
-        free(sv_argv);
-        sv_argv = NULL;
+        free(pt);
+        pt = NULL;
     }
+}
 
+
+void free_grid(char **pt)
+{
+    int i;
+
+    i = -1;
+    while (++i < 9)
+    {
+        free(pt[i]);
+        pt[i] = NULL;
+        i++;
+    }
+    if (pt)
+    {
+        free(pt);
+        pt = NULL;
+    }
 }

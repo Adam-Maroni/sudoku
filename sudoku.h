@@ -9,7 +9,8 @@ typedef struct s_pt
   int x,y;
 } t_pt;
 
-void free_svargv(char **sv_argv);
+void free_svargv(char **pt, int argc);
+void free_grid(char **pt);
 int line_ok(char **grid, t_pt cell);
 int col_ok(char **grid, t_pt cell);
 int cube_ok(char **grid, t_pt cell);
@@ -25,5 +26,6 @@ int validate_input_length(char **argv);
 int validate_input_size(int argc);
 int validate_input(int argc, char **argv);
 void parsing(char **argv, char **grid);
+int grid_ok(char **grid);
 
 #endif
