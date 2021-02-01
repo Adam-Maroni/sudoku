@@ -6,6 +6,7 @@ void display(char **grid)
    int y; 
 
    x = -1;
+   printf("\n");
    while (++x < 9)
    {
        y = -1;
@@ -13,4 +14,5 @@ void display(char **grid)
            printf("%c ", grid[x][y]);
        printf("%c\n", grid[x][y]);
    }
+   printf("\n");
 }

@@ -9,6 +9,7 @@ typedef struct s_pt
   int x,y;
 } t_pt;
 
+void free_svargv(char **sv_argv);
 int line_ok(char **grid, t_pt cell);
 int col_ok(char **grid, t_pt cell);
 int cube_ok(char **grid, t_pt cell);

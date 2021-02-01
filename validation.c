@@ -2,54 +2,54 @@
 
 int line_ok(char **grid, t_pt cell)
 {
-    t_pt tocheck;
+    t_pt cursor;
 
-    tocheck.x = 0;
-    tocheck.y = cell.y;
-    while (tocheck.x <= 9)
+    cursor.x = 0;
+    cursor.y = cell.y;
+    while (cursor.x < 9)
     {
-        if (tocheck.x == cell.x)
-            (tocheck.x)++;
-        if (grid[tocheck.x][tocheck.y] == grid[cell.x][cell.y])
+        if (cursor.x == cell.x)
+            (cursor.x)++;
+        if (grid[cursor.x][cursor.y] == grid[cell.x][cell.y])
             return (0);
-        (tocheck.x)++;
+        (cursor.x)++;
     }
     return (1);
 }
 
 int col_ok(char **grid, t_pt cell)
 {
-    t_pt tocheck;
+    t_pt cursor;
 
-    tocheck.x = cell.x;
-    tocheck.y = 0;
-    while (tocheck.y <= 9)
+    cursor.x = cell.x;
+    cursor.y = 0;
+    while (cursor.y < 9)
     {
-        if (tocheck.y == cell.y)
-            (tocheck.y)++;
-        if (grid[tocheck.x][tocheck.y] == grid[cell.x][cell.y])
+        if (cursor.y == cell.y)
+            (cursor.y)++;
+        if (grid[cursor.x][cursor.y] == grid[cell.x][cell.y])
             return (0);
-        (tocheck.y)++;
+        (cursor.y)++;
     }
     return (1);
 }
 
 int cube_ok(char **grid, t_pt cell)
 {
-    t_pt tocheck;
+    t_pt cursor;
 
-    tocheck.x = (cell.x / 3) * 3;
-    tocheck.y = (cell.y / 3) * 3;
+    cursor.x = (cell.x / 3) * 3;
+    cursor.y = (cell.y / 3) * 3;
 
-    while (tocheck.x < ((cell.x / 3) * 3) + 3)
+    while (cursor.x < ((cell.x / 3) * 3) + 3)
     {
-        while (tocheck.y < ((cell.y / 3) * 3) + 3)
+        while (cursor.y < ((cell.y / 3) * 3) + 3)
         {
-            if (grid[tocheck.x][tocheck.y] == grid[cell.x][cell.y])
+            if (grid[cursor.x][cursor.y] == grid[cell.x][cell.y])
                 return (0);
-            (tocheck.y)++;
+            (cursor.y)++;
         }
-        (tocheck.x)++;
+        (cursor.x)++;
     }
     return (1);
 }
