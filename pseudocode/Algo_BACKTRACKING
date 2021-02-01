@@ -1,7 +1,7 @@
 This function ensure we complete the sudoku
 START
     RECURCIVE
-        WHILE (value of this cell <= 9)
+        WHILE (value of this cell <= '9')
             IF (cell is validated)
                 Move to the next cell with 0 in it
             ENDIF

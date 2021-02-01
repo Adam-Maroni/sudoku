@@ -1,6 +1,6 @@
 #include "sudoku.h"
 
-int line_ok(char **grid, t_pt cell)
+int col_ok(char **grid, t_pt cell)
 {
     t_pt cursor;
 
@@ -8,16 +8,14 @@ int line_ok(char **grid, t_pt cell)
     cursor.y = cell.y;
     while (cursor.x < 9)
     {
-        if (cursor.x == cell.x)
-            (cursor.x)++;
-        if (grid[cursor.x][cursor.y] == grid[cell.x][cell.y])
+        if (grid[cursor.x][cursor.y] == grid[cell.x][cell.y] && cursor.x != cell.x)
             return (0);
         (cursor.x)++;
     }
     return (1);
 }
 
-int col_ok(char **grid, t_pt cell)
+int line_ok(char **grid, t_pt cell)
 {
     t_pt cursor;
 
@@ -25,9 +23,7 @@ int col_ok(char **grid, t_pt cell)
     cursor.y = 0;
     while (cursor.y < 9)
     {
-        if (cursor.y == cell.y)
-            (cursor.y)++;
-        if (grid[cursor.x][cursor.y] == grid[cell.x][cell.y])
+        if (grid[cursor.x][cursor.y] == grid[cell.x][cell.y] && cursor.y != cell.y)
             return (0);
         (cursor.y)++;
     }
@@ -45,7 +41,7 @@ int cube_ok(char **grid, t_pt cell)
     {
         while (cursor.y < ((cell.y / 3) * 3) + 3)
         {
-            if (grid[cursor.x][cursor.y] == grid[cell.x][cell.y])
+            if (grid[cursor.x][cursor.y] == grid[cell.x][cell.y] && (cursor.x != cell.x || cursor.y != cell.y))
                 return (0);
             (cursor.y)++;
         }

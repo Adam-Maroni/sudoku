@@ -1,22 +1,26 @@
 #include "sudoku.h"
 
-t_pt    find_next_cell(char **grid)
+t_pt    find_next_cell(char **grid, t_pt start)
 {
     t_pt next_cell;
     int x;
     int y;
 
-    x = -1;
-    while(++x < 9)
+    x = start.x;
+    while(x < 9)
     {
-        y = -1;
-        while (++y < 9)
+        y = start.y;
+        while (y < 9)
+        {
             if (grid[x][y] == '0')
             {
                 next_cell.x = x;
                 next_cell.y = y;
                 return (next_cell);
             }
+            y++;
+        }
+        x++;
     }
     next_cell.x = x;
     next_cell.y = y;

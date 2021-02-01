@@ -4,8 +4,10 @@ int main(int argc, char **argv)
 {
     char **grid = NULL;
     t_pt first_cell;
+    t_pt next_cell;
     char **sv_argv;
     int i;
+
 
     sv_argv = (char**)malloc(argc * sizeof(char*));
     i = -1;
@@ -27,10 +29,11 @@ int main(int argc, char **argv)
         error("Invalid_input");
     }
     display(grid);
-    first_cell = find_next_cell(grid);
-    if (isInBound(first_cell) == 0)
+    first_cell.x = first_cell.y = 0;
+    next_cell = find_next_cell(grid, first_cell);
+    if (!isInBound(next_cell))
         error("No cell to start by");
-    if (backtracking(grid, first_cell) == 1)
+    if (backtracking(grid, next_cell) == 1)
     {
         display(grid);
         success("Found solution");

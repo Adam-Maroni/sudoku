@@ -12,7 +12,7 @@ int backtracking(char **grid, t_pt cell)
         grid[cell.x][cell.y] = value;
         if(all_ok(grid, cell))
         {
-            next_cell = find_next_cell(grid);
+            next_cell = find_next_cell(grid, cell);
             if (!isInBound(next_cell))
                 return (1);
             ret = backtracking(grid, next_cell);
